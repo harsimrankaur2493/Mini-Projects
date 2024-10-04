@@ -1,0 +1,46 @@
+body{
+    font-family: "Poppins" , sans-serif;
+    overflow: hidden;
+    background: conic-gradient(at top right, deeppink, rebeccapurple);
+    background-repeat:none ;
+    background-size: contain;
+}
+.container{
+    border: 1px solid black;
+    margin: 5rem;
+    padding: 5rem;
+    width: 90%;
+    align-items: center;
+    justify-content: center;
+}
+.digitalClock{
+    display:flex;
+    margin: 2rem;
+    padding: 5rem;
+    border: 5px solid black;
+    background-color: #880dfa1e;
+    max-width: max-content;
+    min-width: max-content;
+    align-items: center;
+    justify-content: center;
+}
+
+.digitalClock h1{
+    display: inline-block;
+    margin: 0px 10px;
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+@media(max-width: 768px){
+    #bar1, #bar2{
+        display: none;
+    }
+    .digitalClock{
+        text-align: center;
+        width: 100%;
+    }
+    .digitalClock h1{
+        display: block;
+    }
+}
