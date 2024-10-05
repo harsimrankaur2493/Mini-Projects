@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dice roller</title>
+    <style>
+        .container{
+            text-align: center;
+        }
+        .img-container{
+            margin: 2px;
+            padding: 2px;
+        }
+        .rollBtn{
+            background-color: rgb(149, 210, 220);
+            height: 2rem;
+            width: 6rem;
+            border-radius: 1rem;
+        }
+        /* .output-box{
+            background-color: rgb(224, 221, 219);
+            height: 3rem;
+            width: 6rem;
+            border-radius: 2rem;  
+        } */
+         .output-box h1{
+            background-color: #cecccc;
+            height: 3rem;
+            pad: 2px;
+         }
+        
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Dice Roller</h1>
+        <div class="img-container">
+            <img src="./images/one.png" alt="" id="dice">
+        </div>
+        <button class="rollBtn">Roll Dice</button>
+        <div class="output-box">
+
+        </div>
+    </div>    
+</body>
+<script>
+    const rollBtn = document.querySelector(".rollBtn");
+    const rollHandler = ()=>{
+        let rollNum = Math.floor(Math.random()*6+1);
+        console.log(rollNum);
+
+        const dice = document.getElementById("dice");
+
+        switch (rollNum) {
+        case 1:
+            dice.setAttribute("src" , "./images/one.png") ;
+            break;
+        case 2:
+            dice.setAttribute("src" , "./images/two.png") ;
+            break;
+        case 3:
+            dice.setAttribute("src" , "./images/three.png") ;
+            break;
+        case 4:
+            dice.setAttribute("src" , "./images/four.png") ;
+            break;
+
+        case 5:
+            dice.setAttribute("src" , "./images/five.png") ;
+            break;
+        case 6:
+            dice.setAttribute("src" , "./images/six.png") ;
+            break;
+
+    
+        default:
+            console.log("something went wrong");
+            break;
+    }
+
+    const optputBox = document.querySelector(".output-box");
+    optputBox.innerHTML = `<h1>${rollNum}</h1>`
+
+    }
+    rollBtn.addEventListener("click" , rollHandler );
+
+</script>
+</html>
