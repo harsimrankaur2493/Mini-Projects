@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        body{
+            background: #000;
+            color: #000;
+        }
+        .buttons{
+            display: flex;
+            justify-content: space-between;
+        }
+        .container{
+            width: 15rem;
+            margin-left: 2rem;
+        }
+        button{
+            height: 4rem;
+            width: 4rem;
+        }
+        .output-screen{
+            
+        }
+        .input-box{
+            height: 4rem;
+            width: 15rem;
+            background: #d8d5d5;
+            border-radius: 5px;
+            color: #000;
+        }
+    </style>
+</head>
+
+<body >
+    <div class="container">
+        <div class="output-screen"><input placeholder="12" class="input-box"></div>
+        <div class="buttons">
+        <button id="ac">AC</button>
+        <button id="del">DEL</button>
+        <button id="mod">%</button>
+        <button id="divide">/</button>
+        </div>
+        <div class="buttons">
+        <button id="seven">7</button>
+        <button id="eight">8</button>
+        <button id="nine">9</button>
+        <button id="mul">*</button>
+        </div>
+        <div class="buttons">
+        <button id="four">4</button>
+        <button id="five">5</button>
+        <button id="six">6</button>
+        <button id="minus">-</button>
+        </div>
+        <div class="buttons">
+        <button id="one">1</button>
+        <button id="two">2</button>
+        <button id="three">3</button>
+        <button id="plus">+</button>
+        </div>
+        <div class="buttons">
+        <button id="zero">0</button>
+        <button id="double-zero">00</button>
+        <button id="dot">.</button>
+        <button id="equals">=</button>
+        </div>
+        
+    </div>
+</body>
+<script>
+    const outputWindow = document.querySelector(".output-screen input");
+    const ac = document.getElementById("ac");
+    ac.addEventListener("click" , ()=>{
+       outputWindow.value = ""})
+
+    // const del = document.getElementById("del");
+    // del.addEventListener("click" , ()=>{
+    //     outputWindow.innerText -=      
+    // });
+
+    document.getElementById("seven").addEventListener("click" , ()=>{
+        outputWindow.value += 7;
+    });
+    document.getElementById("eight").addEventListener("click" , ()=>{
+        outputWindow.value += 8;
+    });
+    document.getElementById("nine").addEventListener("click" , ()=>{
+        outputWindow.value += 9;
+    });
+    document.getElementById("zero").addEventListener("click" , ()=>{
+        outputWindow.value += 0;
+    });
+    document.getElementById("double-zero").addEventListener("click" , ()=>{
+        outputWindow.value += "00";
+    });
+    document.getElementById("one").addEventListener("click" , ()=>{
+        outputWindow.value += 1;
+    });
+    document.getElementById("two").addEventListener("click" , ()=>{
+        outputWindow.value += 2;
+    });
+    document.getElementById("three").addEventListener("click" , ()=>{
+        outputWindow.value += 3;
+    });
+    document.getElementById("four").addEventListener("click" , ()=>{
+        outputWindow.value += 4;
+    });
+    document.getElementById("five").addEventListener("click" , ()=>{
+        outputWindow.value += 5;
+    });
+    document.getElementById("six").addEventListener("click" , ()=>{
+        outputWindow.value += 6;
+    });
+    document.getElementById("dot").addEventListener("click" , ()=>{
+        outputWindow.value += ".";
+    });
+    document.getElementById("mul").addEventListener("click" , ()=>{
+        outputWindow.value += "*";
+    });
+    document.getElementById("plus").addEventListener("click" , ()=>{
+        outputWindow.value += "+";
+    });
+    document.getElementById("minus").addEventListener("click" , ()=>{
+        outputWindow.value += "-";
+    });
+    document.getElementById("divide").addEventListener("click" , ()=>{
+        outputWindow.value += "/";
+    });
+    document.getElementById("mod").addEventListener("click" , ()=>{
+        outputWindow.value += "%";
+    });
+
+
+    const calculate = function(){
+        const input = outputWindow.value;
+        console.log(input);
+        
+        console.log(typeof(input));
+        let num1="";
+        
+        const result = eval(input)      
+        outputWindow.value = `${result}`;
+        console.log(result);
+    }
+    document.addEventListener("keydown" , (e)=>{
+        if(e.key ==="Enter"){
+            calculate();
+        }
+    });
+    
+    document.getElementById("equals").addEventListener("click" , calculate);
+    
+</script>
+
+</html>
