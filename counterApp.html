@@ -1,0 +1,62 @@
+<html>
+  <head>
+    <title>
+        counter app
+    </title>
+    <style>
+        .container{
+            align-items: center;
+            text-align: center;
+        }
+        .increase{
+            margin: 10px;
+            
+        }
+        .decrease{
+            margin: 10px;
+        }
+    </style>
+  </head> 
+  <body>
+    <div class="container">
+        counter
+        <hr/>
+        <h1 class="number">
+            12
+        </h1>
+        <div class="buttons">
+        <button class="increase">
+            +
+        </button>
+
+        <button class="decrease">
+            -
+        </button>
+    </div>
+    <div class="reset-button">
+        <button class="reset">
+            Reset
+        </button>
+    </div>
+    </div>
+  </body> 
+  <script>
+    var num = document.querySelector(".number");    
+    var inc = document.querySelector(".increase");
+    var dec = document.querySelector(".decrease");
+    var reset = document.querySelector(".reset");
+
+    inc.addEventListener("click", ()=>{
+        num.textContent = parseInt(num.textContent)+1;
+    });
+    dec.addEventListener("click" , ()=>{
+        if(parseInt(num.textContent)>0){
+            num.textContent = parseInt(num.textContent)-1;
+        }
+    })
+    reset.addEventListener("click" , ()=>{
+        num.textContent = 0;
+    });
+    
+  </script>
+</html>
