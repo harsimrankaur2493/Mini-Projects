@@ -1,0 +1,59 @@
+<html>
+    <head>
+        <title>
+            guess the number
+        </title>
+    </head>
+    <style>
+        .container{
+            align-items: center;
+            text-align: center;
+        }
+        body{
+            background: linear-gradient(100deg,#eebbe1 , #dd0e0e);
+        }
+        
+    </style>
+
+    <body>
+        <div class="container">
+            <div class="result">
+                <h1 id="result-message">
+                    Guess a number between 1-10
+                </h1>
+            </div>
+            <div class="input-box">
+                <form>
+                    <label for="response"> Enter your response</label>
+                    <input type="number" id="response" placeholder="12"><br>
+                </form>
+            </div>
+            <button id="submitBtn" type="submit">
+                Submit
+            </button>
+        </div>
+    </body>
+    <script>
+
+        var num = Math.floor(Math.random()*10)+1;
+        var given= document.querySelector("#response");
+        console.log(`generated number=${num}`);
+        console.log(`guessed number=${given}`);
+        
+        var result = document.querySelector("#result-message");
+        var submit= document.querySelector("#submitBtn");
+        submit.addEventListener("click", ()=>{
+            if(num == parseInt(given.value)){
+            result.textContent = "correct ! you won!"
+            }else{
+            if(num<parseInt(given.value)){
+                result.textContent = "guess lower";
+            }else{
+                result.textContent = "guess higher"
+            }
+        }
+        });
+        
+
+        </script>
+</html>
